@@ -6,6 +6,13 @@ PhoneGap ToastPlugin
 * Test on PhoneGap 1.7.0 (cordova 1.7)
 
 
+Install Step (On Eclipse)
+--------------------------
+
+1. Import File System to folder **src**, select **ToastPlugin.java**
+2. Edit **res\xml\plugins.xml**, add `<plugin name="ToastPlugin" value="com.phonegap.plugin.ToastPlugin"/>` into `<plugins> </plugins>`
+3. Import **ToastPlugin.js** into .html
+
 API
 -----
 
