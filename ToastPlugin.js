@@ -4,7 +4,7 @@ var Toast= function() {
 Toast.prototype.LENGTH_SHORT = 0;
 Toast.prototype.LENGTH_LONG = 1;
 
-Toast.prototype.show = function(msg, duration ,successCallback, failureCallback){	
+Toast.prototype.show = function(msg, duration ,successCallback, failureCallback){
 	if(duration.toString().toLowerCase() == 'short')
 		duration = this.LENGTH_SHORT;
 	else if(duration.toString().toLowerCase() == 'long')
@@ -29,5 +29,8 @@ Toast.prototype.longshow = function(msg, duration ,successCallback, failureCallb
 };
 
 cordova.addConstructor(function() {
-    Cordova.addPlugin('Toast', new Toast());
+    if (!window.plugins) {
+		window.plugins = {};
+	}
+	window.plugins.Toast = new Toast();
 });
